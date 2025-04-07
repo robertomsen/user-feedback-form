@@ -1,1 +1,5 @@
+coverage/
 test-results/
+dist/
+build/
+node_modules/
