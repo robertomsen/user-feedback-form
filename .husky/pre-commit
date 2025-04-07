@@ -1,3 +1,9 @@
 #!/bin/sh
 
+echo "🔍 Linting staged files..."
+npx lint-staged || exit 1
+
+echo "🧪 Running unit tests..."
+npx vitest run --coverage || exit 1
+
 npx lint-staged
