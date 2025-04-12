@@ -5,7 +5,6 @@
     "useDefineForClassFields": true,
     "incremental": true,
     "tsBuildInfoFile": "./tsbuildinfo.json",
-    "typeRoots": ["node_modules/@types"],
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
