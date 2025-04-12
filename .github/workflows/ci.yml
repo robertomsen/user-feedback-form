@@ -19,8 +19,14 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Set NODE_ENV to development
+        run: echo "NODE_ENV=development" >> $GITHUB_ENV
+        
+      - name: Install dependencies (including devDependencies)
         run: npm ci
+        
+      - name: Set NODE_ENV to production
+        run: echo "NODE_ENV=production" >> $GITHUB_ENV
 
       - name: Run Linter (ESLint)
         run: npm run lint:fix
@@ -30,6 +36,10 @@ jobs:
 
       - name: Build app
         run: npm run build
+
+
+      - name: Prune devDependencies
+        run: npm prune --production
 
       - name: Run Unit Tests (Vitest)
         run: npm run test
