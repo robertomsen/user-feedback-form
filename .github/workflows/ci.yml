@@ -37,10 +37,6 @@ jobs:
       - name: Build app
         run: npm run build
 
-
-      - name: Prune devDependencies
-        run: npm prune --production
-
       - name: Run Unit Tests (Vitest)
         run: npm run test
 
@@ -52,3 +48,6 @@ jobs:
           npm run preview &
           npx wait-on http://localhost:5173
           npm run test:e2e
+
+      - name: Prune devDependencies
+        run: npm prune --production
