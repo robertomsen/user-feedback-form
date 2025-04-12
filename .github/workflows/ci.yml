@@ -47,6 +47,3 @@ jobs:
           yarn run test:e2e
         env:
           PORT: 4173
-
-      - name: Prune devDependencies
-        run: yarn prune --production
