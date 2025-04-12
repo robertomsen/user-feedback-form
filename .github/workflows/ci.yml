@@ -45,6 +45,8 @@ jobs:
           yarn run preview &
           npx wait-on http://localhost:4173
           yarn run test:e2e
+        env:
+          PORT: 4173
 
       - name: Prune devDependencies
         run: yarn prune --production

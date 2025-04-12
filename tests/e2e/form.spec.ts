@@ -1,8 +1,10 @@
 import { test, expect } from '@playwright/test';
 
+const PORT = process.env.PORT || 5173;
+
 test.describe('Feedback Form E2E', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('http://localhost:5173');
+    await page.goto(`http://localhost:${PORT}`);
   });
 
   test('envía feedback válido', async ({ page }) => {
