@@ -46,7 +46,7 @@ const FormPage: React.FC = () => {
 
       {success && (
         <div className={styles.success} role="status">
-          🎉 ¡Gracias por tu feedback!
+          Gracias por tu feedback
         </div>
       )}
 

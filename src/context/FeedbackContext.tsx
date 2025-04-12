@@ -11,6 +11,4 @@ export type FeedbackContextType = {
   success: boolean;
 };
 
-const FeedbackContext = createContext<FeedbackContextType | undefined>(undefined);
-
-export default FeedbackContext;
+export const FeedbackContext = createContext<FeedbackContextType | undefined>(undefined);

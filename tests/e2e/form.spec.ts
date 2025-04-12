@@ -59,6 +59,7 @@ test.describe('Feedback Form E2E', () => {
 
     await submitBtn.click();
 
-    await expect(page.getByRole('button')).toHaveText(/enviando/i);
+    // Espera activa a que cambie el texto del botón a "Enviando..."
+    await expect(page.getByRole('button')).toHaveText(/enviando/i, { timeout: 2000 });
   });
 });

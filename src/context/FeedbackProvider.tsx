@@ -1,7 +1,6 @@
-import React, { useReducer, useState } from 'react';
-import { SubmitFeedback } from '@application/useCases/SubmitFeedback';
+import React, { useState, useCallback } from 'react';
 import { FeedbackProps } from '@domain/entities/Feedback';
-import FeedbackContext from './FeedbackContext';
+import { FeedbackContext, FeedbackContextType } from './FeedbackContext';
 
 const initialState: FeedbackProps = {
   name: '',
@@ -10,70 +9,82 @@ const initialState: FeedbackProps = {
   accepted: false,
 };
 
-function reducer(
-  state: FeedbackProps,
-  action:
-    | { type: 'SET_FIELD'; field: keyof FeedbackProps; value: string | boolean }
-    | { type: 'RESET' },
-): FeedbackProps {
-  switch (action.type) {
-    case 'SET_FIELD':
-      return { ...state, [action.field]: action.value };
-    case 'RESET':
-      return initialState;
-    default:
-      return state;
-  }
-}
-
 export const FeedbackProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, setState] = useState<FeedbackProps>(initialState);
   const [loading, setLoading] = useState(false);
-  const [errorMessages, setErrorMessages] = useState<string[]>([]);
   const [success, setSuccess] = useState(false);
+  const [errorMessages, setErrorMessages] = useState<string[]>([]);
 
   const setField = (field: keyof FeedbackProps, value: string | boolean) => {
-    dispatch({ type: 'SET_FIELD', field, value });
+    setState(prev => ({ ...prev, [field]: value }));
   };
 
   const resetForm = () => {
-    dispatch({ type: 'RESET' });
+    setState(initialState);
     setErrorMessages([]);
     setSuccess(false);
   };
 
-  const submit = async () => {
+  const validate = () => {
+    const errors: string[] = [];
+
+    if (!state.name.trim()) errors.push('Name is required');
+    if (!state.email.includes('@')) errors.push('Email is invalid');
+    if (state.comments.trim().length < 5) errors.push('Comment must be at least 5 characters');
+    if (!state.accepted) errors.push('Terms must be accepted');
+
+    return errors;
+  };
+
+  const submit = useCallback(async () => {
+    const errors = validate();
+    if (errors.length > 0) {
+      setErrorMessages(errors);
+      setSuccess(false);
+      return;
+    }
+
     setLoading(true);
     setErrorMessages([]);
     setSuccess(false);
 
-    const result = await SubmitFeedback(state);
+    try {
+      const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(state),
+      });
 
-    if (result.success) {
+      if (!res.ok) {
+        throw new Error('Unexpected API error');
+      }
+
       setSuccess(true);
-      setTimeout(() => {
-        resetForm();
-      }, 2000);
-    } else {
-      setErrorMessages(result.errors);
-    }
+      setState(initialState);
+    } catch (err: unknown) {
+      let errorMessage = 'Error desconocido';
 
-    setLoading(false);
+      if (err instanceof Error) {
+        const msg = err.message.toLowerCase();
+        const isServerError = msg.includes('unexpected') || msg.includes('server');
+        errorMessage = isServerError ? 'Error del servidor' : err.message;
+      }
+
+      setErrorMessages([errorMessage]);
+    } finally {
+      setLoading(false);
+    }
+  }, [state]);
+
+  const value: FeedbackContextType = {
+    state,
+    setField,
+    resetForm,
+    submit,
+    loading,
+    errorMessages,
+    success,
   };
 
-  return (
-    <FeedbackContext.Provider
-      value={{
-        state,
-        setField,
-        resetForm,
-        submit,
-        loading,
-        errorMessages,
-        success,
-      }}
-    >
-      {children}
-    </FeedbackContext.Provider>
-  );
+  return <FeedbackContext.Provider value={value}>{children}</FeedbackContext.Provider>;
 };
