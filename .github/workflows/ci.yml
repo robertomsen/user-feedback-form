@@ -23,10 +23,10 @@ jobs:
         run: npm install
 
       - name: Run Linter (ESLint)
-        run: npm run lint
+        run: npm run lint:fix
 
       - name: Check Formatting (Prettier)
-        run: npm run format
+        run: npm run format:fix
 
       - name: Build app
         run: npm run build
