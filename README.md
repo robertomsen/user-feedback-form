@@ -3,6 +3,7 @@
 This project is a feedback form application that allows users to submit their comments. It is designed with a modular and scalable architecture, using modern technologies such as React, TypeScript, and advanced tools for testing and code quality.
 
 ## Table of Contents
+
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
@@ -18,6 +19,7 @@ This project is a feedback form application that allows users to submit their co
 ---
 
 ## Features
+
 - **Feedback Form**: Allows users to input their name, email, comments, and accept terms.
 - **Data Validation**: Real-time validations to ensure data quality.
 - **Global State Management**: Handles form state using React Context.
@@ -28,6 +30,7 @@ This project is a feedback form application that allows users to submit their co
 ---
 
 ## Technologies Used
+
 - **Frontend**: React, TypeScript
 - **Global State**: React Context API
 - **Validation**: Custom validations (optional: `yup` or `zod` for advanced validations)
@@ -39,6 +42,7 @@ This project is a feedback form application that allows users to submit their co
 ---
 
 ## Project Structure
+
 The project structure follows clean architecture principles and domain-based modularization:
 
 ```
@@ -63,17 +67,21 @@ tests/
 ## Installation and Setup
 
 ### Prerequisites
+
 - Node.js (v18 or higher)
 - npm or yarn
 
 ### Installation
+
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/your-username/user-feedback-form.git
    cd user-feedback-form
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
@@ -86,20 +94,27 @@ tests/
 ## Running the Project
 
 ### Development Mode
+
 To start the development server:
+
 ```bash
 npm run dev
 ```
+
 The application will be available at [http://localhost:3000](http://localhost:3000).
 
 ### Production Build
+
 To generate an optimized production build:
+
 ```bash
 npm run build
 ```
 
 ### Production Server
+
 To run the application in production mode:
+
 ```bash
 npm run preview
 ```
@@ -109,17 +124,23 @@ npm run preview
 ## Testing
 
 ### Unit Tests
+
 Run unit tests with Vitest:
+
 ```bash
 npm run test
 ```
+
 Generate a coverage report:
+
 ```bash
 npm run test:coverage
 ```
 
 ### End-to-End (E2E) Tests
+
 Run E2E tests with Playwright:
+
 ```bash
 npm run test:e2e
 ```
@@ -136,6 +157,7 @@ The project follows **Clean Architecture** principles, separating responsibiliti
 4. **UI**: Handles the user interface and user interactions.
 
 ### Flow Diagram
+
 ```plaintext
 [UI] --> [Application] --> [Domain] <-- [Infrastructure]
 ```
@@ -143,6 +165,7 @@ The project follows **Clean Architecture** principles, separating responsibiliti
 ---
 
 ## Future Improvements
+
 - **Internationalization**: Implement support for multiple languages using `react-i18next`.
 - **Advanced Validation**: Migrate to `yup` or `zod` for more robust validations.
 - **Accessibility**: Improve form accessibility using tools like `axe-core`.
@@ -152,7 +175,9 @@ The project follows **Clean Architecture** principles, separating responsibiliti
 ---
 
 ## Contributions
+
 Contributions are welcome! If you want to contribute:
+
 1. Fork the repository.
 2. Create a branch for your feature:
    ```bash
@@ -164,6 +189,7 @@ Contributions are welcome! If you want to contribute:
 ---
 
 ## Author
+
 **[Your Name]**  
 Senior Developer | React and TypeScript Specialist  
 [LinkedIn](https://www.linkedin.com/in/your-profile) | [GitHub](https://github.com/your-username)
@@ -171,6 +197,7 @@ Senior Developer | React and TypeScript Specialist
 ---
 
 ## License
+
 This project is licensed under the [MIT License](./LICENSE).
 
 ---
@@ -180,6 +207,7 @@ This project is licensed under the [MIT License](./LICENSE).
 Este proyecto es una aplicación de formulario de retroalimentación que permite a los usuarios enviar comentarios. Está diseñado con una arquitectura modular y escalable, utilizando tecnologías modernas como React, TypeScript y herramientas avanzadas para pruebas y calidad de código.
 
 ## Tabla de Contenidos
+
 - [Características](#características)
 - [Tecnologías Utilizadas](#tecnologías-utilizadas)
 - [Estructura del Proyecto](#estructura-del-proyecto)
@@ -195,6 +223,7 @@ Este proyecto es una aplicación de formulario de retroalimentación que permite
 ---
 
 ## Características
+
 - **Formulario de Retroalimentación**: Permite a los usuarios ingresar su nombre, correo electrónico, comentarios y aceptar términos.
 - **Validación de Datos**: Validaciones en tiempo real para garantizar la calidad de los datos ingresados.
 - **Estado Global**: Manejo del estado del formulario utilizando React Context.
@@ -205,6 +234,7 @@ Este proyecto es una aplicación de formulario de retroalimentación que permite
 ---
 
 ## Tecnologías Utilizadas
+
 - **Frontend**: React, TypeScript
 - **Estado Global**: React Context API
 - **Validación**: Validaciones personalizadas (opcional: `yup` o `zod` para validaciones avanzadas)
@@ -216,6 +246,7 @@ Este proyecto es una aplicación de formulario de retroalimentación que permite
 ---
 
 ## Estructura del Proyecto
+
 La estructura del proyecto sigue principios de arquitectura limpia y modularización por dominios:
 
 ```
@@ -240,17 +271,21 @@ tests/
 ## Instalación y Configuración
 
 ### Requisitos Previos
+
 - Node.js (v18 o superior)
 - npm o yarn
 
 ### Instalación
+
 1. Clona el repositorio:
+
    ```bash
    git clone https://github.com/tu-usuario/user-feedback-form.git
    cd user-feedback-form
    ```
 
 2. Instala las dependencias:
+
    ```bash
    npm install
    ```
@@ -263,20 +298,27 @@ tests/
 ## Ejecución del Proyecto
 
 ### Modo Desarrollo
+
 Para iniciar el servidor de desarrollo:
+
 ```bash
 npm run dev
 ```
+
 La aplicación estará disponible en [http://localhost:3000](http://localhost:3000).
 
 ### Build de Producción
+
 Para generar una versión optimizada para producción:
+
 ```bash
 npm run build
 ```
 
 ### Servidor de Producción
+
 Para ejecutar la aplicación en modo producción:
+
 ```bash
 npm run preview
 ```
@@ -286,17 +328,23 @@ npm run preview
 ## Pruebas
 
 ### Unitarias
+
 Ejecuta las pruebas unitarias con Vitest:
+
 ```bash
 npm run test
 ```
+
 Genera un reporte de cobertura:
+
 ```bash
 npm run test:coverage
 ```
 
 ### End-to-End (E2E)
+
 Ejecuta las pruebas E2E con Playwright:
+
 ```bash
 npm run test:e2e
 ```
@@ -313,6 +361,7 @@ El proyecto sigue principios de **Clean Architecture**, separando responsabilida
 4. **UI**: Maneja la interfaz de usuario y la interacción con el usuario.
 
 ### Diagrama de Flujo
+
 ```plaintext
 [UI] --> [Application] --> [Domain] <-- [Infrastructure]
 ```
@@ -320,6 +369,7 @@ El proyecto sigue principios de **Clean Architecture**, separando responsabilida
 ---
 
 ## Mejoras Futuras
+
 - **Internacionalización**: Implementar soporte para múltiples idiomas con `react-i18next`.
 - **Validación Avanzada**: Migrar a `yup` o `zod` para validaciones más robustas.
 - **Accesibilidad**: Mejorar la accesibilidad del formulario utilizando herramientas como `axe-core`.
@@ -329,7 +379,9 @@ El proyecto sigue principios de **Clean Architecture**, separando responsabilida
 ---
 
 ## Contribuciones
+
 ¡Las contribuciones son bienvenidas! Si deseas contribuir:
+
 1. Haz un fork del repositorio.
 2. Crea una rama para tu feature:
    ```bash
@@ -341,6 +393,7 @@ El proyecto sigue principios de **Clean Architecture**, separando responsabilida
 ---
 
 ## Autor
+
 **[Tu Nombre]**  
 Desarrollador Senior | Especialista en React y TypeScript  
 [LinkedIn](https://www.linkedin.com/in/tu-perfil) | [GitHub](https://github.com/tu-usuario)
@@ -348,4 +401,5 @@ Desarrollador Senior | Especialista en React y TypeScript
 ---
 
 ## Licencia
+
 Este proyecto está licenciado bajo la [MIT License](./LICENSE).
