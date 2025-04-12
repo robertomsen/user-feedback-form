@@ -19,9 +19,6 @@ jobs:
         with:
           node-version: 20
 
-      - name: Set NODE_ENV to development
-        run: echo "NODE_ENV=development" >> $GITHUB_ENV
-        
       - name: Install dependencies (including devDependencies)
         run: npm ci
 
@@ -45,9 +42,6 @@ jobs:
           npm run preview &
           npx wait-on http://localhost:5173
           npm run test:e2e
-
-      - name: Set NODE_ENV to production
-        run: echo "NODE_ENV=production" >> $GITHUB_ENV
 
       - name: Prune devDependencies
         run: npm prune --production
