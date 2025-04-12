@@ -68,7 +68,7 @@ tests/
 
 ### Prerequisites
 
-- Node.js (v18 or higher)
+- Node.js (v20 or higher)
 - npm or yarn
 
 ### Installation
@@ -83,7 +83,7 @@ tests/
 2. Install dependencies:
 
    ```bash
-   npm install
+   yarn install
    ```
 
 3. Configure environment variables (if applicable):
@@ -98,17 +98,17 @@ tests/
 To start the development server:
 
 ```bash
-npm run dev
+yarn dev
 ```
 
-The application will be available at [http://localhost:3000](http://localhost:3000).
+The application will be available at [http://localhost:5173](http://localhost:5173).
 
 ### Production Build
 
 To generate an optimized production build:
 
 ```bash
-npm run build
+yarn build
 ```
 
 ### Production Server
@@ -116,7 +116,7 @@ npm run build
 To run the application in production mode:
 
 ```bash
-npm run preview
+yarn preview
 ```
 
 ---
@@ -128,13 +128,13 @@ npm run preview
 Run unit tests with Vitest:
 
 ```bash
-npm run test
+yarn test
 ```
 
 Generate a coverage report:
 
 ```bash
-npm run test:coverage
+yarn test:coverage
 ```
 
 ### End-to-End (E2E) Tests
@@ -142,7 +142,7 @@ npm run test:coverage
 Run E2E tests with Playwright:
 
 ```bash
-npm run test:e2e
+yarn test:e2e
 ```
 
 ---
@@ -272,7 +272,7 @@ tests/
 
 ### Requisitos Previos
 
-- Node.js (v18 o superior)
+- Node.js (v20 o superior)
 - npm o yarn
 
 ### Instalación
@@ -287,7 +287,7 @@ tests/
 2. Instala las dependencias:
 
    ```bash
-   npm install
+   yarn install
    ```
 
 3. Configura las variables de entorno (si aplica):
@@ -302,17 +302,17 @@ tests/
 Para iniciar el servidor de desarrollo:
 
 ```bash
-npm run dev
+yarn dev
 ```
 
-La aplicación estará disponible en [http://localhost:3000](http://localhost:3000).
+La aplicación estará disponible en [http://localhost:5173](http://localhost:5173).
 
 ### Build de Producción
 
 Para generar una versión optimizada para producción:
 
 ```bash
-npm run build
+yarn build
 ```
 
 ### Servidor de Producción
@@ -320,7 +320,7 @@ npm run build
 Para ejecutar la aplicación en modo producción:
 
 ```bash
-npm run preview
+yarn preview
 ```
 
 ---
@@ -332,13 +332,13 @@ npm run preview
 Ejecuta las pruebas unitarias con Vitest:
 
 ```bash
-npm run test
+yarn test
 ```
 
 Genera un reporte de cobertura:
 
 ```bash
-npm run test:coverage
+yarn test:coverage
 ```
 
 ### End-to-End (E2E)
@@ -346,7 +346,7 @@ npm run test:coverage
 Ejecuta las pruebas E2E con Playwright:
 
 ```bash
-npm run test:e2e
+yarn test:e2e
 ```
 
 ---
