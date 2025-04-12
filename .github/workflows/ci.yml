@@ -43,7 +43,7 @@ jobs:
       - name: Run E2E tests (Playwright)
         run: |
           yarn run preview &
-          npx wait-on http://localhost:5173
+          npx wait-on http://localhost:4173
           yarn run test:e2e
 
       - name: Prune devDependencies
