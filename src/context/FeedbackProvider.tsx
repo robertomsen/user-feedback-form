@@ -25,7 +25,7 @@ export const FeedbackProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setSuccess(false);
   };
 
-  const validate = () => {
+  const validate = useCallback(() => {
     const errors: string[] = [];
 
     if (!state.name.trim()) errors.push('Name is required');
@@ -34,7 +34,7 @@ export const FeedbackProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     if (!state.accepted) errors.push('Terms must be accepted');
 
     return errors;
-  };
+  }, [state]);
 
   const submit = useCallback(async () => {
     const errors = validate();
@@ -74,7 +74,7 @@ export const FeedbackProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     } finally {
       setLoading(false);
     }
-  }, [state]);
+  }, [state, validate]);
 
   const value: FeedbackContextType = {
     state,
