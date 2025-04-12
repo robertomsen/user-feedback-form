@@ -19,29 +19,32 @@ jobs:
         with:
           node-version: 20
 
+      - name: Install YARN
+        run: npm install --global yarn
+      
       - name: Install dependencies (including devDependencies)
-        run: npm ci
+        run: yarn install
 
       - name: Run Linter (ESLint)
-        run: npm run lint:fix
+        run: yarn run lint:fix
 
       - name: Check Formatting (Prettier)
-        run: npm run format:fix
+        run: yarn run format:fix
 
       - name: Build app
-        run: npm run build
+        run: yarn run build
 
       - name: Run Unit Tests (Vitest)
-        run: npm run test
+        run: yarn run test
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
       - name: Run E2E tests (Playwright)
         run: |
-          npm run preview &
+          yarn run preview &
           npx wait-on http://localhost:5173
-          npm run test:e2e
+          yarn run test:e2e
 
       - name: Prune devDependencies
-        run: npm prune --production
+        run: yarn prune --production
